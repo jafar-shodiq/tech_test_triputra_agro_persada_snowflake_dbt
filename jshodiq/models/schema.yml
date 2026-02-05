@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: "Table fakta penjualan"
+    columns:
+      - name: order_item_id_glob
+        description: "ID unik untuk setiap item pesanan"
+        tests:
+          - unique
+          - not_null
+
+      - name: order_id
+        description: "ID order (bisa muncul berulang)"
+        tests:
+          - not_null
+        
+      - name: order_status
+        description: "Status order"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['delivered', 'shipped', 'canceled', 'invoiced', 'processing', 'approved', 'unavailable', 'created']
+
+      - name: customer_id
+        description: "ID pelanggan"
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id
+
+      - name: product_id
+        description: "ID produk"
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_products')
+                field: product_id
+
+  - name: dim_customers
+    description: "Tabel dimensi pelanggan"
+    columns:
+      - name: customer_id
+        description: "ID pelanggan unik"
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_products
+    description: "Tabel dimensi produk"
+    columns:
+      - name: product_id
+        description: "ID produk unik"
+        tests:
+          - unique
+          - not_null

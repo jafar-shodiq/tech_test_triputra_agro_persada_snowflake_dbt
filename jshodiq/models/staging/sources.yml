@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: JSHODIQ_TECH_TEST
+    schema: PUBLIC
+    tables:
+      - name: raw_orders
+      - name: raw_customers
+      - name: raw_products
+      - name: raw_order_items
+      - name: raw_payments

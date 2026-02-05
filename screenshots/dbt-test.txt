@@ -1,0 +1,36 @@
+(jshodiq_tech_test_triputra_agro_persada) PS C:\Users\Jafar Shodiq\Documents\jshodiq_tech_test_triputra_agro_persada\jshodiq\models> dbt test
+09:13:16  Running with dbt=1.11.2
+09:13:16  Registered adapter: snowflake=1.11.1
+09:13:17  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.jshodiq.example
+09:13:17  Found 8 models, 10 data tests, 5 sources, 522 macros
+09:13:17
+09:13:17  Concurrency: 1 threads (target='dev')
+09:13:17
+09:13:18  1 of 10 START test accepted_values_fact_sales_order_status__delivered__shipped__canceled__invoiced__processing__approved__unavailable__created  [RUN]
+09:13:19  1 of 10 PASS accepted_values_fact_sales_order_status__delivered__shipped__canceled__invoiced__processing__approved__unavailable__created  [PASS in 1.08s]
+09:13:19  2 of 10 START test not_null_dim_customers_customer_id .......................... [RUN]
+09:13:19  2 of 10 PASS not_null_dim_customers_customer_id ................................ [PASS in 0.15s]
+09:13:19  3 of 10 START test not_null_dim_products_product_id ............................ [RUN]
+09:13:20  3 of 10 PASS not_null_dim_products_product_id .................................. [PASS in 0.18s]
+09:13:20  4 of 10 START test not_null_fact_sales_order_id ................................ [RUN]
+09:13:20  4 of 10 PASS not_null_fact_sales_order_id ...................................... [PASS in 0.13s]
+09:13:20  5 of 10 START test not_null_fact_sales_order_item_id_glob ...................... [RUN]
+09:13:20  5 of 10 PASS not_null_fact_sales_order_item_id_glob ............................ [PASS in 0.08s]
+09:13:20  6 of 10 START test relationships_fact_sales_customer_id__customer_id__ref_dim_customers_  [RUN]
+09:13:20  6 of 10 PASS relationships_fact_sales_customer_id__customer_id__ref_dim_customers_  [PASS in 0.20s]
+09:13:20  7 of 10 START test relationships_fact_sales_product_id__product_id__ref_dim_products_  [RUN]
+09:13:20  7 of 10 PASS relationships_fact_sales_product_id__product_id__ref_dim_products_  [PASS in 0.16s]
+09:13:20  8 of 10 START test unique_dim_customers_customer_id ............................ [RUN]
+09:13:20  8 of 10 PASS unique_dim_customers_customer_id .................................. [PASS in 0.15s]
+09:13:20  9 of 10 START test unique_dim_products_product_id .............................. [RUN]
+09:13:20  9 of 10 PASS unique_dim_products_product_id .................................... [PASS in 0.11s]
+09:13:20  10 of 10 START test unique_fact_sales_order_item_id_glob ....................... [RUN]
+09:13:21  10 of 10 PASS unique_fact_sales_order_item_id_glob ............................. [PASS in 0.14s]
+09:13:21
+09:13:21  Finished running 10 data tests in 0 hours 0 minutes and 3.51 seconds (3.51s).
+09:13:21
+09:13:21  Completed successfully
+09:13:21
+09:13:21  Done. PASS=10 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=10

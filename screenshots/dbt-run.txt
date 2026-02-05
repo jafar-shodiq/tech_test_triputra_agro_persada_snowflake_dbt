@@ -1,0 +1,32 @@
+(jshodiq_tech_test_triputra_agro_persada) PS C:\Users\Jafar Shodiq\Documents\jshodiq_tech_test_triputra_agro_persada\jshodiq\models> dbt run
+09:11:42  Running with dbt=1.11.2
+09:11:43  Registered adapter: snowflake=1.11.1
+09:11:43  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.jshodiq.example
+09:11:44  Found 8 models, 10 data tests, 5 sources, 522 macros
+09:11:44
+09:11:44  Concurrency: 1 threads (target='dev')
+09:11:44
+09:11:46  1 of 8 START sql view model PUBLIC.stg_customers ............................... [RUN]
+09:11:46  1 of 8 OK created sql view model PUBLIC.stg_customers .......................... [SUCCESS 1 in 0.35s]
+09:11:46  2 of 8 START sql view model PUBLIC.stg_order_items ............................. [RUN]
+09:11:46  2 of 8 OK created sql view model PUBLIC.stg_order_items ........................ [SUCCESS 1 in 0.16s]
+09:11:46  3 of 8 START sql view model PUBLIC.stg_orders .................................. [RUN]
+09:11:46  3 of 8 OK created sql view model PUBLIC.stg_orders ............................. [SUCCESS 1 in 0.16s]
+09:11:46  4 of 8 START sql view model PUBLIC.stg_payments ................................ [RUN]
+09:11:46  4 of 8 OK created sql view model PUBLIC.stg_payments ........................... [SUCCESS 1 in 0.16s]
+09:11:46  5 of 8 START sql view model PUBLIC.stg_products ................................ [RUN]
+09:11:47  5 of 8 OK created sql view model PUBLIC.stg_products ........................... [SUCCESS 1 in 0.14s]
+09:11:47  6 of 8 START sql table model PUBLIC.dim_customers .............................. [RUN]
+09:11:48  6 of 8 OK created sql table model PUBLIC.dim_customers ......................... [SUCCESS 1 in 1.16s]
+09:11:48  7 of 8 START sql table model PUBLIC.fact_sales ................................. [RUN]
+09:11:50  7 of 8 OK created sql table model PUBLIC.fact_sales ............................ [SUCCESS 1 in 2.56s]
+09:11:50  8 of 8 START sql table model PUBLIC.dim_products ............................... [RUN]
+09:11:51  8 of 8 OK created sql table model PUBLIC.dim_products .......................... [SUCCESS 1 in 0.89s]
+09:11:51
+09:11:51  Finished running 3 table models, 5 view models in 0 hours 0 minutes and 7.72 seconds (7.72s).
+09:11:51
+09:11:51  Completed successfully
+09:11:51
+09:11:51  Done. PASS=8 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=8
